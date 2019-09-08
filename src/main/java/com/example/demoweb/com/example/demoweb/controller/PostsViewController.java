@@ -1,16 +1,15 @@
 package com.example.demoweb.com.example.demoweb.controller;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
 @org.springframework.stereotype.Controller
 public class PostsViewController {
-    @ResponseBody
+//    @ResponseBody
     @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String list() {
-        return "Здесь будет главная страница";
+    public String list(Model model) {
+        model.addAttribute("appName", "Мое супер приложение");
+        return "list";
     }
 
     @ResponseBody
