@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @Controller
 public class PostsViewController {
     @Autowired
@@ -13,6 +15,8 @@ public class PostsViewController {
 
     @RequestMapping(path = "/", method = RequestMethod.GET)
     public String list(Model model) {
+        Date date =new Date();
+        model.addAttribute("data",date);
         model.addAttribute("appName", "Мое супер приложение");
         model.addAttribute("posts", postsService.listAllPosts());
         return "list";
