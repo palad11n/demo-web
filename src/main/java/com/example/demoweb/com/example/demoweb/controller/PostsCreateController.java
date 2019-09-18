@@ -7,22 +7,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
-
 @Controller
-public class PostsViewController {
+public class PostsCreateController {
     @Autowired
     PostService postsService;
 
-    @RequestMapping(path = "/", method = RequestMethod.GET)
-    public String list(Model model) {
+    @RequestMapping(path = "/new", method = RequestMethod.GET)
+    public String create(Model model) {
         model.addAttribute("appName", "Мое супер приложение");
         model.addAttribute("posts", postsService.listAllPosts());
-        return "list";
+        return "create";
     }
 
-    @ResponseBody
-    @RequestMapping(path = "/post/{id}", method = RequestMethod.GET)
-    public String single(@PathVariable("id") Long id) {
-        return "Здесь будет страница поста №" + id;
+    @RequestMapping(path = "/new", method = RequestMethod.POST)
+    public String doCreate(@ModelAttribute("text") String text) {
+        postsService.create(text);
+        return "redirect:/";
     }
 }
