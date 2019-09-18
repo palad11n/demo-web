@@ -10,7 +10,7 @@ public class PostService {
     private ArrayList<Post> posts = new ArrayList<Post>();
 
     public ArrayList<Post> listAllPosts() {
-
+        if (posts.size() == 0) create("test");
 //        for (int i = 1; i < 5; i++) {
 //            posts.add(new Post("test" + i,new Date()));
 //        }
@@ -18,6 +18,7 @@ public class PostService {
     }
 
     public void create(String text) {
-        posts.add(new Post(text, new Date()));
+        Integer count = posts.size();
+        posts.add(new Post(count == 0 ? count : count + 1l, text, new Date()));
     }
 }

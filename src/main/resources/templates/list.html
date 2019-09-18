@@ -5,7 +5,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <script src="/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
     <div class="container">
         <h1 th:text="${appName}" style="color: green">Default app name</h1>
@@ -19,7 +20,7 @@
                     <p class="description-text" th:text="${post.text}">Text</p>
                 </div>
                 <div class="col-md-1">
-                    <button class="btn btn-sm btn-secondary like" th:text="${post.likes + ' ❤'}">0 ❤</button>
+                    <button class="btn btn-sm btn-secondary like" th:text="${post.likes + ' ❤'}" th:attr="data-post-id=${post.id}">0 ❤</button>
                 </div>
                 <div class="col-md-12">
                     <hr/>
