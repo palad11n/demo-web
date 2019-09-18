@@ -6,7 +6,7 @@ public class Post {
     private String text;
     private Integer likes;
     private Date creationDate;
-    private Long id;
+
 
     public Post(Long id, String text, Date creationDate) {
         this.id = id;

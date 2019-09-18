@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+
 @Controller
 public class PostsCreateController {
     @Autowired
@@ -15,7 +16,7 @@ public class PostsCreateController {
     @RequestMapping(path = "/new", method = RequestMethod.GET)
     public String create(Model model) {
         model.addAttribute("appName", "Мое супер приложение");
-        model.addAttribute("posts", postsService.listAllPosts());
+
         return "create";
     }
 
