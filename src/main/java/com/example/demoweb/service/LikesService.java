@@ -11,7 +11,9 @@ public class LikesService {
     PostRepository postRepository;
 
     public Integer like(Long postId) {
-        Post post = postRepository.findById(postId).get();
+        Post post = postRepository.findPostById(postId);
+        if (post == null)
+            return -1;
         post.setLikes(post.getLikes() + 1);
         postRepository.save(post);
         return post.getLikes();

@@ -4,4 +4,5 @@ import com.example.demoweb.model.Post;
 import org.springframework.data.repository.CrudRepository;
 
 public interface PostRepository extends CrudRepository<Post, Long> {
+    Post findPostById(long idPost);
 }

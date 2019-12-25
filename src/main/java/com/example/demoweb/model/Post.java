@@ -26,6 +26,10 @@ public class Post implements Serializable {
         this.creationDate = creationDate;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public Date getCreationDate() {
         return creationDate;
     }

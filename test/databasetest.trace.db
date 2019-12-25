@@ -1,0 +1,4 @@
+2019-12-25 19:42:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "DATABASETEST" не найдена
+Table "DATABASETEST" not found; SQL statement:
+INSERT INTO databasetest VALUES('HELLO','testiiing',10) [42102-199]
